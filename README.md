@@ -1,23 +1,37 @@
 
-Create the envi
+Create the env
 
-- conda create -n mlops_dvc
-
+'''bash
+conda create -n mlops_dvc
+'''
 Activate the env
-- conda activate mlops_dvc
 
+'''bash
+conda activate mlops_dvc
+'''
 Created a req file
 
-install the req
+Install the requirments
 
-- pip install -r requirments.txt
+'''bash
+pip install -r requirments.txt
+'''
 
-download data from : https://www.kaggle.com/datasets/shravanbangera/californiahousing1990?resource=download
+Download data from : https://www.kaggle.com/datasets/shravanbangera/californiahousing1990?resource=download
 
+
+'''bash
 git init
 
-git init
+dvc init
 
 dvc add data_given/*.csv
 
 git add . && git commit -m 'first commit'
+
+
+git remote add origin https://github.com/hanene2030/mlops_dvc.git
+git branch -M sample_1
+git push origin sample_1
+
+'''bash
