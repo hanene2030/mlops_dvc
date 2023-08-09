@@ -20,3 +20,4 @@ git init
 
 dvc add data_given/*.csv
 
+git add . && git commit -m 'first commit'
