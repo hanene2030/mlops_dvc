@@ -2,6 +2,7 @@ base:
   project: pricing-project
   random_state: 32
   target_col: median_house_value
+  cols_to_delete: ['ocean_proximity']
 
 data_source:
   gdrive_source: data_given/housing.csv
@@ -19,6 +20,10 @@ estimators:
     params:
       alpha: 0.9
       l1_ratio: 0.4
-
 model_dir: saved_models
+
+reports:
+  params: report/params.json
+  scores: report/scores.json
+
 

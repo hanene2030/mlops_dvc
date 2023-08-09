@@ -13,24 +13,20 @@ stages:
       size: 694
     - path: src/load_data.py
       hash: md5
-      md5: 533d78a4d0b67fbf22739c4cb2b1ea58
-      size: 652
+      md5: 5876d24eda921b7971c0007f695973b1
+      size: 834
     outs:
     - path: data/raw/housing.csv
       hash: md5
-      md5: d1c47305887e2252bf1ccbd74ff159a6
-      size: 1423529
+      md5: b0d596a8b3425305c80e7be5fac57480
+      size: 1225059
   split_data:
     cmd: python src/split_data.py --config=params.yaml
     deps:
     - path: data/raw/housing.csv
       hash: md5
-      md5: d1c47305887e2252bf1ccbd74ff159a6
-      size: 1423529
-    - path: src/get_data.py
-      hash: md5
-      md5: d6f6cebfd52569b34c6be82bca4f66eb
-      size: 694
+      md5: b0d596a8b3425305c80e7be5fac57480
+      size: 1225059
     - path: src/split_data.py
       hash: md5
       md5: 3586ca45b221380e551550227f7e611b
@@ -38,9 +34,41 @@ stages:
     outs:
     - path: data/processed/test_housing.csv
       hash: md5
-      md5: 7020d2fec332a98c76a1bd1a8448220d
-      size: 284887
+      md5: 088bb1f8d96b8103c3edd48af99d2f02
+      size: 245179
     - path: data/processed/train_housing.csv
       hash: md5
-      md5: 5e10b3f7ed472509529d2a83ec0aefd7
-      size: 1138778
+      md5: ffce4ad2d23aee4aac4ed5b4d9f2319c
+      size: 980000
+  train_and_evaluate:
+    cmd: python src/train_and_evaluate.py --config=params.yaml
+    deps:
+    - path: data/processed/test_housing.csv
+      hash: md5
+      md5: 088bb1f8d96b8103c3edd48af99d2f02
+      size: 245179
+    - path: data/processed/train_housing.csv
+      hash: md5
+      md5: ffce4ad2d23aee4aac4ed5b4d9f2319c
+      size: 980000
+    - path: src/train_and_evaluate.py
+      hash: md5
+      md5: e6816e0489315c807bb3c2ca1e9e9490
+      size: 2498
+    params:
+      params.yaml:
+        estimators.ElasticNet.params.alpha: 0.9
+        estimators.ElasticNet.params.l1_ratio: 0.4
+    outs:
+    - path: report/params.json
+      hash: md5
+      md5: a4aab0167612f21a6085dd05cfafdbf6
+      size: 41
+    - path: report/scores.json
+      hash: md5
+      md5: c9dec136d16d8b3def23b59185887985
+      size: 94
+    - path: saved_models/model.joblib
+      hash: md5
+      md5: 2eb89d9118b3d974a4efd606d7021ac1
+      size: 1183

@@ -6,7 +6,8 @@ dirs = [
     os.path.join("data","processed"),
     "notebooks",
     "saved_models",
-    "src"
+    "src",
+    "report"
 
 
 ]
@@ -22,8 +23,9 @@ files = [
     '.gitignore',
     os.path.join('src','__init__.py')
 
+
 ]
 
 for file_ in files:
-    with open(file_, 'w') as f:
+    with open(file_, 'a') as f:#w
         pass

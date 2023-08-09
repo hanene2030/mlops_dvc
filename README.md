@@ -46,3 +46,13 @@ dvc repro
 dvc.lock file was created
 
 
+Use the following commond 
+```bash
+dvc metrics show
+
+```
+
+```bash
+dvc metrics diff
+
+```
