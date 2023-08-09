@@ -12,4 +12,3 @@ tox
 flake8
 flask
 gunicorn
-seaborn
