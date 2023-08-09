@@ -63,3 +63,33 @@ dvc metrics show
 dvc metrics diff
 
 ```
+
+tox command 
+```bash
+
+tox
+```
+
+for rebuilding
+```bash
+tox -r
+```
+
+pytest command
+```bash 
+pytest -v
+```
+
+setup commands 
+
+```bash 
+pip install -e .
+```
+
+
+Build your own pkge commands 
+
+```bash 
+python setup.py sdist bdist_wheel
+```
+
