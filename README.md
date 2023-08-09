@@ -1,26 +1,26 @@
 
 Create the env
 
-'''bash
+```bash
 conda create -n mlops_dvc
-'''
+```
 Activate the env
 
-'''bash
+```bash
 conda activate mlops_dvc
-'''
+```
 Created a req file
 
 Install the requirments
 
-'''bash
+```bash
 pip install -r requirments.txt
-'''
+```
 
 Download data from : https://www.kaggle.com/datasets/shravanbangera/californiahousing1990?resource=download
 
 
-'''bash
+```bash
 git init
 
 dvc init
@@ -34,4 +34,4 @@ git remote add origin https://github.com/hanene2030/mlops_dvc.git
 git branch -M sample_1
 git push origin sample_1
 
-'''bash
+```bash
