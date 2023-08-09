@@ -46,7 +46,14 @@ dvc repro
 dvc.lock file was created
 
 
-Use the following commond 
+Change alpha and l1_ratio values in the params.yml 
+````
+dvc repro
+
+```
+
+Use the following command
+
 ```bash
 dvc metrics show
 
