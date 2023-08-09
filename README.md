@@ -41,13 +41,13 @@ Updated dvc.yaml then :
 
 ```bash
 dvc repro
-``````
+```
 
 dvc.lock file was created
 
 
 Change alpha and l1_ratio values in the params.yml 
-````
+```bash
 dvc repro
 
 ```
