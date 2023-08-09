@@ -37,3 +37,12 @@ git push origin sample_1
 ```
 
 
+Updated dvc.yaml then :
+
+```bash
+dvc repro
+``````
+
+dvc.lock file was created
+
+

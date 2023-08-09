@@ -1,0 +1,22 @@
+schema: '2.0'
+stages:
+  load_data:
+    cmd: python src/load_data.py --config=params.yaml
+    deps:
+    - path: data_given/housing.csv
+      hash: md5
+      md5: d1c47305887e2252bf1ccbd74ff159a6
+      size: 1423529
+    - path: src/get_data.py
+      hash: md5
+      md5: d6f6cebfd52569b34c6be82bca4f66eb
+      size: 694
+    - path: src/load_data.py
+      hash: md5
+      md5: 533d78a4d0b67fbf22739c4cb2b1ea58
+      size: 652
+    outs:
+    - path: data/raw/housing.csv
+      hash: md5
+      md5: d1c47305887e2252bf1ccbd74ff159a6
+      size: 1423529
