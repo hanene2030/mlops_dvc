@@ -39,8 +39,10 @@ def train_and_evaluate(config_path):
     params_file = config["reports"]["params"]
     target = [config["base"]["target_col"]]
    
+
     train = pd.read_csv(train_data_path, sep=",")
     test = pd.read_csv(test_data_path, sep=",")
+
 
     train_y = train[target]
     test_y  = test[target]

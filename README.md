@@ -17,7 +17,7 @@ Install the requirments
 pip install -r requirments.txt
 ```
 
-Download data from : https://www.kaggle.com/datasets/shravanbangera/californiahousing1990?resource=download
+Generate data usining notebook : generate data
 
 
 ```bash

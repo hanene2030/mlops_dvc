@@ -9,16 +9,17 @@ import argparse
 
 def load_and_save(config_path):
     config = read_params(config_path)
-    cols_to_delete = config["base"]["cols_to_delete"]
+    #cols_to_delete = config["base"]["cols_to_delete"]
     df = get_data(config_path)
 
-    new_cols = [col.replace(' ','_') for col in df.columns if col not in cols_to_delete ] 
+    #new_cols = [col.replace(' ','_') for col in df.columns if col not in cols_to_delete ] 
+    new_cols = [col.replace(' ','_') for col in df.columns  ] 
 
 
     raw_data_path = config["load_data"]["raw_dataset_csv"]
 
-    for col_ in cols_to_delete:
-        df = df.drop(col_, axis=1)
+    #for col_ in cols_to_delete:
+    #    df = df.drop(col_, axis=1)
 
     df.dropna(inplace=True)
 

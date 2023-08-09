@@ -5,28 +5,28 @@ stages:
     deps:
     - path: data_given/housing.csv
       hash: md5
-      md5: d1c47305887e2252bf1ccbd74ff159a6
-      size: 1423529
+      md5: ad2984d5f67279c963c90e143013dd47
+      size: 92039
     - path: src/get_data.py
       hash: md5
       md5: d6f6cebfd52569b34c6be82bca4f66eb
       size: 694
     - path: src/load_data.py
       hash: md5
-      md5: 5876d24eda921b7971c0007f695973b1
-      size: 834
+      md5: 0ba7264fbb36cc5a54c8ee845516f16b
+      size: 901
     outs:
     - path: data/raw/housing.csv
       hash: md5
-      md5: b0d596a8b3425305c80e7be5fac57480
-      size: 1225059
+      md5: 7f6833e4b5da471012de4d2df6c0b942
+      size: 91418
   split_data:
     cmd: python src/split_data.py --config=params.yaml
     deps:
     - path: data/raw/housing.csv
       hash: md5
-      md5: b0d596a8b3425305c80e7be5fac57480
-      size: 1225059
+      md5: 7f6833e4b5da471012de4d2df6c0b942
+      size: 91418
     - path: src/split_data.py
       hash: md5
       md5: 3586ca45b221380e551550227f7e611b
@@ -34,41 +34,41 @@ stages:
     outs:
     - path: data/processed/test_housing.csv
       hash: md5
-      md5: 088bb1f8d96b8103c3edd48af99d2f02
-      size: 245179
+      md5: 39f18da198269fd820bea860a3435068
+      size: 18328
     - path: data/processed/train_housing.csv
       hash: md5
-      md5: ffce4ad2d23aee4aac4ed5b4d9f2319c
-      size: 980000
+      md5: 5e69606ddc663bd490a94067addc673f
+      size: 73082
   train_and_evaluate:
     cmd: python src/train_and_evaluate.py --config=params.yaml
     deps:
     - path: data/processed/test_housing.csv
       hash: md5
-      md5: 088bb1f8d96b8103c3edd48af99d2f02
-      size: 245179
+      md5: 39f18da198269fd820bea860a3435068
+      size: 18328
     - path: data/processed/train_housing.csv
       hash: md5
-      md5: ffce4ad2d23aee4aac4ed5b4d9f2319c
-      size: 980000
+      md5: 5e69606ddc663bd490a94067addc673f
+      size: 73082
     - path: src/train_and_evaluate.py
       hash: md5
-      md5: 254776fe48557aa3973537d06e8a5bbe
-      size: 2473
+      md5: 1ec26cd37cd35570e22fff176c9a4c6f
+      size: 2475
     params:
       params.yaml:
-        estimators.ElasticNet.params.alpha: 100
+        estimators.ElasticNet.params.alpha: 0.89
         estimators.ElasticNet.params.l1_ratio: 0.9
     outs:
     - path: report/params.json
       hash: md5
-      md5: d585fd2aa85d8982aae05c4308057ef3
-      size: 41
+      md5: 251d869eed318fe1832614da4fd3e46b
+      size: 42
     - path: report/scores.json
       hash: md5
-      md5: 8a11dd2625a28f7a06b8c13b6618f10e
+      md5: bbe10270e85bf34c36bdf1cc949311a5
       size: 93
     - path: saved_models/model.joblib
       hash: md5
-      md5: 80a64f456cb9fc656af34014a4dc7c50
-      size: 1183
+      md5: 477846953480f5f0bce2956dc9ecac9b
+      size: 1071
