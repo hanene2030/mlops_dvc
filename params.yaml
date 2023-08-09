@@ -1,5 +1,5 @@
 base:
-  project: pricing-project
+  project: guess-project
   random_state: 32
   target_col: Target 
   #median_house_value

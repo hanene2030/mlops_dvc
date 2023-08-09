@@ -9,12 +9,12 @@ stages:
       size: 92039
     - path: src/get_data.py
       hash: md5
-      md5: d6f6cebfd52569b34c6be82bca4f66eb
-      size: 694
+      md5: df714e5692968c8ac9006a8ebd497bc3
+      size: 673
     - path: src/load_data.py
       hash: md5
-      md5: 0ba7264fbb36cc5a54c8ee845516f16b
-      size: 901
+      md5: eaa3476dbb5739c3d8c568d89e8fc918
+      size: 881
     outs:
     - path: data/raw/housing.csv
       hash: md5
@@ -29,8 +29,8 @@ stages:
       size: 91418
     - path: src/split_data.py
       hash: md5
-      md5: 3586ca45b221380e551550227f7e611b
-      size: 1160
+      md5: 7510b6ec32dd5e59ca177ec313852094
+      size: 1122
     outs:
     - path: data/processed/test_housing.csv
       hash: md5
@@ -53,8 +53,8 @@ stages:
       size: 73082
     - path: src/train_and_evaluate.py
       hash: md5
-      md5: 1ec26cd37cd35570e22fff176c9a4c6f
-      size: 2475
+      md5: 1312fef7502a28921f9e04a1b18fe8e9
+      size: 2373
     params:
       params.yaml:
         estimators.ElasticNet.params.alpha: 0.89
