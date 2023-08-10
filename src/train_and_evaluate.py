@@ -49,7 +49,7 @@ def train_and_evaluate(config_path):
 
     mlflow.set_experiment(mlflow_config["experiment_name"])
 
-    with mlflow.start_run(run_name=mlflow_config["run_name"]) as mlops_run:
+    with mlflow.start_run(run_name=mlflow_config["run_name"]):
 
         lr = ElasticNet(
             alpha=alpha,
