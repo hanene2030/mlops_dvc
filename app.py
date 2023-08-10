@@ -27,7 +27,7 @@ def index():
                 return render_template('index.html', response=response)
             elif request.json:
                 # to test it as an API from postman ,...
-         
+
                 response = prediction.api_response(request.json)
                 return jsonify(response)
 

@@ -39,9 +39,9 @@ def validate_input(dict_request):
 
     def _validate_cols(col):
         schema = get_schema()
-      
+
         actual_cols_list = list(schema.keys())
-   
+
         if col not in actual_cols_list:
             raise NotInCols
 
@@ -51,8 +51,8 @@ def validate_input(dict_request):
             raise NotInRange
 
     for col, val in list(dict_request.items()):
-       _validate_cols(col)
-       _validate_values(col, val)
+        _validate_cols(col)
+        _validate_values(col, val)
 
     return True
 
@@ -62,7 +62,7 @@ def form_response(dict_request):
     if validate_input(dict_request):
 
         data = dict_request.values()
-     
+
         data = [list(map(float, data))]
         pred = predict(data)
         return pred
@@ -74,9 +74,9 @@ def api_response(dict_request):
 
         if validate_input(dict_request):
 
-            #data = np.array([list(dict_request.values())])
+            # data = np.array([list(dict_request.values())])
             data = np.array([list(dict_request.values())])
-            
+
             response = predict(data)
             response = {"response": response}
             return response
