@@ -1,0 +1,285 @@
+{
+  "id": "b7d90127-d680-4a9e-84bd-1b3adbc58207",
+  "timestamp": "2023-08-12T16:53:40.299603",
+  "metadata": {
+    "test_presets": [
+      "DataDriftTestPreset"
+    ]
+  },
+  "tags": [],
+  "suite": {
+    "metrics": [
+      {
+        "type": "evidently.metrics.data_drift.data_drift_table.DataDriftTable",
+        "options": {
+          "color": null,
+          "render": null,
+          "custom": {}
+        },
+        "stattest": null,
+        "cat_stattest": null,
+        "num_stattest": null,
+        "text_stattest": null,
+        "per_column_stattest": null,
+        "stattest_threshold": null,
+        "cat_stattest_threshold": null,
+        "num_stattest_threshold": null,
+        "text_stattest_threshold": null,
+        "per_column_stattest_threshold": null,
+        "columns": null
+      },
+      {
+        "type": "evidently.metrics.data_drift.column_drift_metric.ColumnDriftMetric",
+        "options": {
+          "color": null,
+          "render": null,
+          "custom": {}
+        },
+        "column_name": {
+          "type": "evidently.base_metric.ColumnName",
+          "name": "Feature_1",
+          "display_name": "Feature_1",
+          "dataset": "main",
+          "feature_class": null
+        },
+        "stattest": null,
+        "stattest_threshold": null
+      },
+      {
+        "type": "evidently.metrics.data_drift.column_drift_metric.ColumnDriftMetric",
+        "options": {
+          "color": null,
+          "render": null,
+          "custom": {}
+        },
+        "column_name": {
+          "type": "evidently.base_metric.ColumnName",
+          "name": "Feature_2",
+          "display_name": "Feature_2",
+          "dataset": "main",
+          "feature_class": null
+        },
+        "stattest": null,
+        "stattest_threshold": null
+      },
+      {
+        "type": "evidently.metrics.data_drift.column_drift_metric.ColumnDriftMetric",
+        "options": {
+          "color": null,
+          "render": null,
+          "custom": {}
+        },
+        "column_name": {
+          "type": "evidently.base_metric.ColumnName",
+          "name": "Feature_3",
+          "display_name": "Feature_3",
+          "dataset": "main",
+          "feature_class": null
+        },
+        "stattest": null,
+        "stattest_threshold": null
+      },
+      {
+        "type": "evidently.metrics.data_drift.column_drift_metric.ColumnDriftMetric",
+        "options": {
+          "color": null,
+          "render": null,
+          "custom": {}
+        },
+        "column_name": {
+          "type": "evidently.base_metric.ColumnName",
+          "name": "Feature_4",
+          "display_name": "Feature_4",
+          "dataset": "main",
+          "feature_class": null
+        },
+        "stattest": null,
+        "stattest_threshold": null
+      },
+      {
+        "type": "evidently.metrics.data_drift.column_drift_metric.ColumnDriftMetric",
+        "options": {
+          "color": null,
+          "render": null,
+          "custom": {}
+        },
+        "column_name": {
+          "type": "evidently.base_metric.ColumnName",
+          "name": "Target",
+          "display_name": "Target",
+          "dataset": "main",
+          "feature_class": null
+        },
+        "stattest": null,
+        "stattest_threshold": null
+      }
+    ],
+    "metric_results": [
+      {
+        "type": "evidently.base_metric.MetricResult"
+      },
+      {
+        "type": "evidently.base_metric.MetricResult"
+      },
+      {
+        "type": "evidently.base_metric.MetricResult"
+      },
+      {
+        "type": "evidently.base_metric.MetricResult"
+      },
+      {
+        "type": "evidently.base_metric.MetricResult"
+      },
+      {
+        "type": "evidently.base_metric.MetricResult"
+      }
+    ],
+    "tests": [
+      {
+        "lt": 0.3,
+        "type": "evidently.tests.data_drift_tests.TestShareOfDriftedColumns"
+      },
+      {
+        "type": "evidently.tests.data_drift_tests.TestColumnDrift",
+        "column_name": {
+          "type": "evidently.base_metric.ColumnName",
+          "name": "Feature_1",
+          "display_name": "Feature_1",
+          "dataset": "main",
+          "feature_class": null
+        },
+        "stattest": null,
+        "stattest_threshold": null
+      },
+      {
+        "type": "evidently.tests.data_drift_tests.TestColumnDrift",
+        "column_name": {
+          "type": "evidently.base_metric.ColumnName",
+          "name": "Feature_2",
+          "display_name": "Feature_2",
+          "dataset": "main",
+          "feature_class": null
+        },
+        "stattest": null,
+        "stattest_threshold": null
+      },
+      {
+        "type": "evidently.tests.data_drift_tests.TestColumnDrift",
+        "column_name": {
+          "type": "evidently.base_metric.ColumnName",
+          "name": "Feature_3",
+          "display_name": "Feature_3",
+          "dataset": "main",
+          "feature_class": null
+        },
+        "stattest": null,
+        "stattest_threshold": null
+      },
+      {
+        "type": "evidently.tests.data_drift_tests.TestColumnDrift",
+        "column_name": {
+          "type": "evidently.base_metric.ColumnName",
+          "name": "Feature_4",
+          "display_name": "Feature_4",
+          "dataset": "main",
+          "feature_class": null
+        },
+        "stattest": null,
+        "stattest_threshold": null
+      },
+      {
+        "type": "evidently.tests.data_drift_tests.TestColumnDrift",
+        "column_name": {
+          "type": "evidently.base_metric.ColumnName",
+          "name": "Target",
+          "display_name": "Target",
+          "dataset": "main",
+          "feature_class": null
+        },
+        "stattest": null,
+        "stattest_threshold": null
+      }
+    ],
+    "test_results": [
+      {
+        "type": "evidently.tests.base_test.TestResult",
+        "name": "Share of Drifted Columns",
+        "description": "Test failed with exceptions: An empty column 'Feature_1' was provided for drift calculation in the current dataset.",
+        "status": "ERROR",
+        "group": "data_drift",
+        "parameters": {
+          "type": "evidently.tests.base_test.TestParameters"
+        }
+      },
+      {
+        "type": "evidently.tests.base_test.TestResult",
+        "name": "Drift per Column",
+        "description": "Test failed with exceptions: An empty column 'Feature_1' was provided for drift calculation in the current dataset.",
+        "status": "ERROR",
+        "group": "data_drift",
+        "parameters": {
+          "type": "evidently.tests.base_test.TestParameters"
+        }
+      },
+      {
+        "type": "evidently.tests.base_test.TestResult",
+        "name": "Drift per Column",
+        "description": "Test failed with exceptions: An empty column 'Feature_2' was provided for drift calculation in the current dataset.",
+        "status": "ERROR",
+        "group": "data_drift",
+        "parameters": {
+          "type": "evidently.tests.base_test.TestParameters"
+        }
+      },
+      {
+        "type": "evidently.tests.base_test.TestResult",
+        "name": "Drift per Column",
+        "description": "Test failed with exceptions: An empty column 'Feature_3' was provided for drift calculation in the current dataset.",
+        "status": "ERROR",
+        "group": "data_drift",
+        "parameters": {
+          "type": "evidently.tests.base_test.TestParameters"
+        }
+      },
+      {
+        "type": "evidently.tests.base_test.TestResult",
+        "name": "Drift per Column",
+        "description": "Test failed with exceptions: An empty column 'Feature_4' was provided for drift calculation in the current dataset.",
+        "status": "ERROR",
+        "group": "data_drift",
+        "parameters": {
+          "type": "evidently.tests.base_test.TestParameters"
+        }
+      },
+      {
+        "type": "evidently.tests.base_test.TestResult",
+        "name": "Drift per Column",
+        "description": "Test failed with exceptions: An empty column 'Target' was provided for drift calculation in the current dataset.",
+        "status": "ERROR",
+        "group": "data_drift",
+        "parameters": {
+          "type": "evidently.tests.base_test.TestParameters"
+        }
+      }
+    ],
+    "options": {
+      "color": null,
+      "render": null,
+      "custom": {}
+    }
+  },
+  "metrics_ids": [],
+  "test_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "options": {
+    "color": null,
+    "render": null,
+    "custom": {}
+  }
+}

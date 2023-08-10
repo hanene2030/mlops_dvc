@@ -1,0 +1,11 @@
+{
+  "id": "eea0517d-e5e5-43d2-bfb5-67e4d2e5f457",
+  "name": "Project name",
+  "description": null,
+  "dashboard": {
+    "name": "Project name",
+    "panels": []
+  },
+  "date_from": null,
+  "date_to": null
+}
