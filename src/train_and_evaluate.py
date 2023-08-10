@@ -44,8 +44,16 @@ def train_and_evaluate(config_path):
     test_x = test.drop(target, axis=1)
 
     mlflow_config = config['mlflow_config']
-    remote_server_uri = mlflow_config['remote_server_uri']
+    
+    
+    
+    #remote_server_uri = mlflow_config['remote_server_uri']
+    #mlflow.set_tracking_uri(remote_server_uri)
+    ## For Remote server only(DAGShub)
+
+    remote_server_uri="https://dagshub.com/hanene2030/mlops_dvc.mlflow"
     mlflow.set_tracking_uri(remote_server_uri)
+    
 
     mlflow.set_experiment(mlflow_config["experiment_name"])
 
