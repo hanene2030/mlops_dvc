@@ -66,3 +66,10 @@ stages:
       hash: md5
       md5: 0c0e9c14f619f430fad5d1658d599585
       size: 1824
+  model_monitoring:
+    cmd: python src/model_monitoring.py --config=params.yaml
+    deps:
+    - path: src/model_monitoring.py
+      hash: md5
+      md5: 77d2fa62d47e7433658ab1b81416e3af
+      size: 2739

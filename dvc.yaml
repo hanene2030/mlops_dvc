@@ -38,3 +38,9 @@ stages:
     cmd: python src/log_production_model.py --config=params.yaml
     deps:
     - src/log_production_model.py
+
+
+  model_monitoring:
+    cmd: python src/model_monitoring.py --config=params.yaml
+    deps:
+    - src/model_monitoring.py

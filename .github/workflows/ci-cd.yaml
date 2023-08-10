@@ -3,10 +3,10 @@ name: Python application
 on:
   push:
     branches:
-    - sample_2-mlflow
+    - sample_3-evidently
   pull_request:
     branches:
-    - sample_2-mlflow
+    - sample_3-evidently
 
 jobs:
   build:
@@ -39,7 +39,9 @@ jobs:
       env:
         HEROKU_API_TOKEN: ${{ secrets.HEROKU_API_TOKEN }}
         HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
-      if: github.ref == 'refs/heads/sample_2-mlflow' && job.status == 'success'
+      if: github.ref == 'refs/heads/sample_3-evidently' && job.status == 'success'
       run: |
         git remote add heroku https://heroku:$HEROKU_API_TOKEN@git.heroku.com/$HEROKU_APP_NAME.git
         git push heroku HEAD:sample_1 -f
+
+        

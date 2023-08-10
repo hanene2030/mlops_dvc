@@ -39,3 +39,9 @@ mlflow_config:
   run_name: mlops
   registered_model_name: ElasticNetPredictionModel
   remote_server_uri: http://0.0.0.0:1234
+
+
+evidently:
+  project_name: "Project name"
+  project_desc :  "Project description"
+  workspace : "workspace"

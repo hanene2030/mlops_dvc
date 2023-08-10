@@ -93,12 +93,19 @@ Build your own pkge commands
 python setup.py sdist bdist_wheel
 ```
 
+create an artifcats folder 
 
-
-
-create an artifcats folder and use mlflow server command to start the server 
+Use mlflow server command to start the server 
 
 
 ```bash
 mlflow server  --backend-store-uri sqlite:///mlflow.db  --default-artifact-root ./artifacts  --host 0.0.0.0 -p 1234
 ```
+
+
+For model monitoring used evidently:
+```bash
+ evidently ui --workspace ./workspace --port 8080
+``````
+
+https://docs.evidentlyai.com/get-started/tutorial-monitoring
