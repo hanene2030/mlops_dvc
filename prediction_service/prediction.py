@@ -33,37 +33,50 @@ def get_schema():
 
 def validate_input(dict_request):
 
+    print(dict_request)
+    print(type(dict_request))
+    print(dict_request.items())
+
     def _validate_cols(col):
         schema = get_schema()
-        actual_cols = schema.keys()
-        if col not in actual_cols:
+      
+        actual_cols_list = list(schema.keys())
+   
+        if col not in actual_cols_list:
             raise NotInCols
 
     def _validate_values(col, val):
         schema = get_schema()
-        if not (schema[col]["min"] <= float(dict_request[col]) <= schema[col]["max"]):
+        if not (schema[col]["min"] <= float(val) <= schema[col]["max"]):
             raise NotInRange
 
-    for col, val in dict_request.items():
-        _validate_cols(col)
-        _validate_values(col, val)
+    for col, val in list(dict_request.items()):
+       _validate_cols(col)
+       _validate_values(col, val)
 
     return True
 
 
 def form_response(dict_request):
+
     if validate_input(dict_request):
+
         data = dict_request.values()
+     
         data = [list(map(float, data))]
         pred = predict(data)
         return pred
 
 
 def api_response(dict_request):
+    print(dict_request)
     try:
 
         if validate_input(dict_request):
+
+            #data = np.array([list(dict_request.values())])
             data = np.array([list(dict_request.values())])
+            
             response = predict(data)
             response = {"response": response}
             return response
@@ -72,7 +85,7 @@ def api_response(dict_request):
         return response
 
     except NotInCols as e:
-        response = {"the_exected_cols": get_schema().keys(),
+        response = {"the_exected_cols": list(get_schema().keys()),
                     "response": str(e)}
         return response
 
@@ -88,7 +101,7 @@ def predict(data):
     prediction = model.predict(data).tolist()[0]
 
     try:
-        if prediction > 0:
+        if prediction > -10000:
             return prediction
         else:
             raise NotInRange
