@@ -1,5 +1,8 @@
-For Mlflow go to branch sample_2-mlflow
 
+- For DVC, Mlflow and evidently sample go to sample_3-evidently
+
+- For Mlflow sample go to branch sample_2-mlflow
+- For DVC sample  go to sample_1
 Create the env
 
 ```bash
