@@ -1,8 +1,8 @@
-
+- To test the webapp go to :
+  * https://mlops-prediction-0a639e686bbb.herokuapp.com
+- For Mlflow go to:
+  * https://dagshub.com/hanene2030/mlops_dvc.mlflow
 - For DVC, Mlflow and evidently sample go to sample_3-evidently
-  
-     https://dagshub.com/hanene2030/mlops_dvc.mlflow
-
 - For Mlflow sample go to branch sample_2-mlflow
 - For DVC sample  go to sample_1
 Create the env
