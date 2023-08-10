@@ -1,7 +1,7 @@
 import pytest
 import yaml
 import json
-import os 
+import os
 
 
 @pytest.fixture
@@ -12,7 +12,7 @@ def config(config_path="params.yaml"):
 
 
 @pytest.fixture
-def schema_in(schema_path=os.path.join('prediction_service',"schema_in.json")):
+def schema_in(schema_path=os.path.join('prediction_service', "schema_in.json")):
     with open(schema_path) as json_file:
         schema = json.load(json_file)
     print(schema)
