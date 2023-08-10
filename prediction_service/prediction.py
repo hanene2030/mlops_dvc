@@ -14,7 +14,7 @@ schema_path = os.path.join('prediction_service', 'schema_in.json')
 
 
 class NotInRange(Exception):
-    def __init__(self,  message='Values entered not in range'):
+    def __init__(self,  message='Values  not in range'):
         self.message = message
         super().__init__(self.message)
 
